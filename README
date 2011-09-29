@@ -1,0 +1,11 @@
+Country Reports is a contrib module for Drupal 7.x which is under development.
+
+The purpose of Country Reports is to add a content type which will allow a user to create customized maps
+of a specified country along with accompanying information regarding that country. 
+
+The map of the country in question will be based on the google charts API map making feature.
+
+This module is currently under development. If you would like to know more please contact me via my
+drupal account: agalligani on drupal.org.
+
+Thanks

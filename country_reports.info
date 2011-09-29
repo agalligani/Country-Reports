@@ -1,4 +1,6 @@
-$id$;
-/** this file is a test, only a test... **/
-
-Thanks!
+; $Id$
+; country_reports.info - .info file for the country_reports module
+name = Country Reports
+description = Country Reports module
+package = Country Reports
+core = 7.x

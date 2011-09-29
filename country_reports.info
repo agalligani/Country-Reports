@@ -3,4 +3,5 @@
 name = Country Reports
 description = Country Reports module
 package = Country Reports
+files = country_reports.module
 core = 7.x

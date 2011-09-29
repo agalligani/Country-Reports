@@ -1,0 +1,25 @@
+<?php
+// $Id$
+
+/**
+* @file
+* Defines features and functions common to the country_report module.
+*/
+
+/**
+* Implements hook_help().
+*/
+
+function country_reports_help($path, $arg) {
+
+switch($path) {
+  //Main module help page
+  case 'admin/help#country_reports': 
+    return '<p>' . t('Country Reports are nodes that display one map each of a country under which there is a description of that country or information pertaining to that country. For example a map of Mozambique along with information on landmine victims in that country, or a map of Chile along with per capita income in that country, etc. Ideally it would make sense to use this module to make a list of countries with similar comparitive information for each country listed; let`s say for an NGO describing their activities in each country where they maintain a presence, or a company describing their workforce in each country. 
+	');
+}
+
+}
+
+
+

@@ -102,6 +102,70 @@ function node_example_field_formatter_info() {
     ),
   );
 }
+<<<<<<< HEAD
+=======
+
+/**
+ * Implements hook_field_formatter_view().
+ *
+ * @todo: We need to provide a formatter for the colors that a user is allowed
+ * to enter during node creation.
+ */
+function node_example_field_formatter_view($object_type, $object, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+  switch ($display['type']) {
+    case 'node_example_colors':
+      foreach ($items as $delta => $item) {
+        $element[$delta]['#type'] = 'markup';
+        $color = $item['safe_value'];
+        $element[$delta]['#markup'] = theme('example_node_color', array('color' => $color));
+      }
+      break;
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * This lets us tell Drupal about our theme functions and their arguments.
+ */
+function node_example_theme($existing, $type, $theme, $path) {
+  return array(
+    'example_node_color' => array(
+      'variables' => array('color' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements hook_help().
+ */
+function node_example_help($path, $arg) {
+  switch ($path) {
+    case 'examples/node_example':
+      return "<p>" . t("The Node Example module provides a custom node type.
+        You can create new Example Node nodes using the <a href='!nodeadd'>node add form</a>.",
+        array('!nodeadd' => url('node/add/node-example'))) . "</p>";
+  }
+}
+
+/**
+ * A custom theme function.
+ *
+ * By using this function to format our node-specific information, themes
+ * can override this presentation if they wish.  This is a simplifed theme
+ * function purely for illustrative purposes.
+ */
+function theme_example_node_color($variables) {
+  $output = '<span style="background-color: #ccc; padding: 1em; margin-bottom: 1em; float: left; color: ' . $variables['color'] . '">' . $variables['color'] . '</span>';
+  return $output;
+}
+/**
+ * @} End of "defgroup node_example".
+ */
+>>>>>>> 475f0be9286a2c11c6ac8b4c409965b1504fc40b
 
 /**
  * Implements hook_field_formatter_view().
